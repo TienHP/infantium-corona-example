@@ -212,6 +212,39 @@ timer.performWithDelay( 2500, function()
 	-- More info
 	---- Differences among goals explained in the Advanced Guides section of the official docs.
 	infantium.addTappingGoal("tapping_goal_1", -1, true, "", "ALL")
+
+	--------------------------
+	----- Event examples -----
+	--------------------------
+
+	-- Method 'addEvent': creates an Event to be triggered during gameplay. The Event will be triggered afterwards.
+	-- Params: 
+	---- String event_id: unique event identifier for this scene. It will be used when referring to the event later on.
+	---- String type (optional): the type of the Event. Allowed values for this version are "sound" and "missed_opportunity".
+	------ "" if not used.
+	-- Returns
+	---- String response: either NIL (for Plugin errors) or a string indicating the result from the SDK.
+	-- More info
+	---- More info in the Events section of the official docs, inside the advanced guides.
+	infantium.addEvent("balloon_flies_away", "missed_opportunity")
+
+	-- Method 'addSoundEvent': creates a SoundEvent to be triggered during gameplay. It will be triggered afterwards.
+	-- Params: 
+	---- String event_id: unique event identifier for this scene. It will be used when referring to the event later on.
+	---- String sound_type (optional): the type of the SoundEvent. Allowed values are "voice", "song", "specific_sound", 
+	------ "tune", etc. "" if not used.
+	---- String associated_text (optional). Text read/sung in the Sound. "" if empty.
+	---- String language (optional). Language of the previous text. "" if empty.
+	---- Double imprecise_sound_volume (optional). The approximate volume of the Sound. -1.0 if empty.
+	---- Long duration (optional). The duration of the Sound in milliseconds. -1 if not used.
+	-- Returns
+	---- String response: either NIL (for Plugin errors) or a string indicating the result from the SDK.
+	-- More info
+	---- More info in the Events section of the official docs, inside the advanced guides.
+	infantium.addSoundEvent("lion_name_sound", "female_voice", "Lion", "en-US", -1.0, -1)
+	infantium.addSoundEvent("orange_name_sound", "voice", "Naranja", "es-es", 0.7, 1000)
+	infantium.addSoundEvent("knees_and_toes_song", "song", "", "", -1.0, -1)
+
 	
 	------------------------
 	----- Start timers -----
@@ -246,6 +279,22 @@ timer.performWithDelay( 4500, function()
 	infantium.newBasicInteraction("success", "text_element_1", "goal_2", -1, -1, -1);
 	infantium.newBasicInteraction("error", "text_element_1", "goal_1", -1, -1, -1);
 	infantium.newBasicInteraction("success", "", "matching_goal_1", 60000, 2, 5);
+
+	----------------------------
+	----- Events Triggered -----
+	----------------------------
+	
+	-- Method 'triggerExistingEvent': triggers an Event which just occurred
+	-- Params
+	---- String event_id: the ID of the previously defined Event.
+	---- String triggered_by (optional): what triggered the event. Can be "tap", "drag", "double_tap", "timer", "random", 
+	------ etc. "" if not used.
+	-- Returns
+	---- String response: either NIL (for Plugin errors) or a string indicating the result from the SDK.
+	-- More info
+	---- More info in the Events section of the official docs, inside the advanced guides.
+	infantium.triggerExistingEvent("lion_name_sound", "tap")
+	infantium.triggerExistingEvent("knees_and_toes_song", "")
 	
 	-------------------------
 	----- Send the data -----
