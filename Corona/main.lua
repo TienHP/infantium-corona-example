@@ -241,7 +241,7 @@ timer.performWithDelay( 2500, function()
 	---- String response: either NIL (for Plugin errors) or a string indicating the result from the SDK.
 	-- More info
 	---- More info in the Events section of the official docs, inside the advanced guides.
-	infantium.addSoundEvent("lion_name_sound", "female_voice", "Lion", "en-US", -1.0, -1)
+	infantium.addSoundEvent("lion_name_sound", "woman_voice", "Lion", "en-US", -1.0, -1)
 	infantium.addSoundEvent("orange_name_sound", "voice", "Naranja", "es-es", 0.7, 1000)
 	infantium.addSoundEvent("knees_and_toes_song", "song", "", "", -1.0, -1)
 
