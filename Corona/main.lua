@@ -24,7 +24,7 @@ timer.performWithDelay( 500, function()
 	---- String api_key: private developer api_key, provided by Infantium
 	-- Returns
 	---- String response: either NIL (for Plugin errors) or a string indicating the result from the SDK.
-	infantium.setDeveloperCredentials("androidSDK","585f946642aac847403bf6743f918892eac695f6")
+	infantium.setDeveloperCredentials("username","0000000000000000000000000000000000000000")
 	
 	-- Method 'setDeviceInfo': set the size in pixels of the device
 	-- Params
@@ -39,7 +39,7 @@ timer.performWithDelay( 500, function()
 	---- String contentapp_uuid: private UUID of the App, provided by Infantium.
 	-- Returns
 	---- String response: either NIL (for Plugin errors) or a string indicating the result from the SDK.
-	infantium.setContentAppUUID("7c5a435f459e45ea94bec8c67750d121")
+	infantium.setContentAppUUID("00000000000000000000000000000000")
 	
 	-- Method 'setSubContentUUID': identify which subcontent the kid is playing
 	-- Params
@@ -48,7 +48,7 @@ timer.performWithDelay( 500, function()
 	---- String response: either NIL (for Plugin errors) or a string indicating the result from the SDK.
 	-- Extra info
 	---- Not all the apps will need to use this function.
-	infantium.setSubContentUUID("e4c13a7fb15743fda6fc80a5c90cf244")
+	infantium.setSubContentUUID("00000000000000000000000000000000")
 end )
 
 timer.performWithDelay( 2500, function()
@@ -63,7 +63,7 @@ timer.performWithDelay( 2500, function()
 	---- String subcontent_uuid: private UUID of the subcontent being played, provided by Infantium.
 	-- Returns
 	---- String response: either NIL (for Plugin errors) or a string indicating the result from the SDK.
-	infantium.createGameplay("e4c13a7fb15743fda6fc80a5c90cf244")
+	infantium.createGameplay("00000000000000000000000000000000")
 	
 	-----------------------------
 	----- Elements examples -----
